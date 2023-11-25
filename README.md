@@ -18,7 +18,7 @@ It contains all base features from color utils to basecommand and arguments. It 
 	<dependency>
 	    <groupId>com.github.Meta-Service</groupId>
 	    <artifactId>MetaAPI</artifactId>
-	    <version>V1.0.0</version>
+	    <version>V1.0.2</version>
 	</dependency>
 ```
 
@@ -35,6 +35,6 @@ It contains all base features from color utils to basecommand and arguments. It 
 
 ```
 	dependencies {
-	        implementation 'com.github.Meta-Service:MetaAPI:V1.0.0'
+	        implementation 'com.github.Meta-Service:MetaAPI:V1.0.2'
 	}
 ```
