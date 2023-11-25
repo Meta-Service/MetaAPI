@@ -34,9 +34,11 @@ public class JsonFile {
      * @param child  The child file path.
      * @throws IOException if there is an issue creating the file.
      */
-    public JsonFile(String parent, String child) throws IOException {
+    public JsonFile(File parent, String child) throws IOException {
         this.values = new HashMap<>();
         this.file = new File(parent, child);
+
+        if (!parent.exists()) parent.mkdir();
 
         if (!file.exists()) {
             file.createNewFile();

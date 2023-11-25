@@ -1,5 +1,6 @@
 package com.metaservice.metaapi.command;
 
+import com.metaservice.metaapi.MetaAPI;
 import com.metaservice.metaapi.command.argument.Argument;
 import com.metaservice.metaapi.util.Color;
 import lombok.Getter;
@@ -8,6 +9,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -41,7 +43,7 @@ public abstract class BaseCommand {
     /**
      * The list of arguments associated with the command.
      */
-    private List<Argument> arguments = List.of();
+    private List<Argument> arguments = Collections.emptyList();
 
     /**
      * Flag indicating whether the command is intended for players only.
@@ -96,6 +98,10 @@ public abstract class BaseCommand {
                 return true;
             }
         };
+    }
+
+    public void register() {
+        MetaAPI.getInstance().getVersionManager().getVersion().getCommandMap().register(getName(), toBukkitCommand());
     }
 
     /**
